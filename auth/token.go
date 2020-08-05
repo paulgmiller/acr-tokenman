@@ -79,8 +79,8 @@ func acquireACRAccessToken(clientID string, acrFQDN string) (string, error) {
 	eul := fmt.Sprintf("https://%s/oauth2/exchange", acrFQDN)
 
 	parameters := url.Values{}
-	parameters.Add("grant_type", armResource)
-	parameters.Add("service", clientID)
+	parameters.Add("grant_type", "access_token")
+	parameters.Add("service", acrFQDN)
 	parameters.Add("tenant", "72f988bf-86f1-41af-91ab-2d7cd011db47")
 	parameters.Add("access_token", armtoken)
 
